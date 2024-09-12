@@ -3,4 +3,10 @@ from django.http import HttpResponse, HttpRequest
 
 
 def product_list_view(request: HttpRequest):
-    return HttpResponse("<h1>Hello World!</h1>")
+    context = {
+        "products": [
+            {'id': 1, 'name': "iphone", 'price': 1000},
+            {'id': 2, 'name': "mc", 'price': 1001},
+            {'id': 3, 'name': "ipad", 'price': 1002}, ]
+    }
+    return render(request, template_name='products.html', context=context)
