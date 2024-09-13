@@ -9,4 +9,12 @@ def product_list_view(request: HttpRequest):
             {'id': 2, 'name': "mc", 'price': 1001},
             {'id': 3, 'name': "ipad", 'price': 1002}, ]
     }
-    return render(request, template_name='products.html', context=context)
+    return render(request, template_name='product/product.html', context=context)
+
+
+def product_detail_view(request: HttpRequest):
+    return render(request, "product/detail.html")
+
+
+def home(request):
+    return render(request, "product/home.html")
