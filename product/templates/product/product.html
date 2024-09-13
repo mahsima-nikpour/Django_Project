@@ -1,30 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-{#    <h1>#}
-{#        <ul>#}
-{#            <li>product 1</li>#}
-{#            <li>product 2</li>#}
-{#            <li>product 3</li>#}
-{#            <li>product 4</li>#}
-{#            <li>product 5</li>#}
-{#            <li>product 6</li>#}
-{#            <li>product 7</li>#}
-{#            <li>product 8</li>#}
-{#            <li>product 9</li>#}
-{#            <li>product 10</li>#}
-{#        </ul>#}
-{#    </h1>#}
+{% extends 'shared/layout.html' %}
+
+{% block title %}
+    لیست محصولات
+{% endblock %}
+
+
+{% block content %}
     <h1>
         <ul>
-        {% for item in products %}
-            <li>{{ item.name }} is {{ item.price }} $</li>
-        {% endfor %}
+            {% for item in products %}
+                <li>{{ item.name }} is {{ item.price }} $</li>
+            {% endfor %}
         </ul>
     </h1>
-</body>
-</html>
+{% endblock %}
